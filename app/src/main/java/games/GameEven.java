@@ -1,7 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.games.GameData;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

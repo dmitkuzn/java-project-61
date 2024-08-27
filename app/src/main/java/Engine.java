@@ -19,7 +19,8 @@ class Engine {
             if (userAnswer.equals(gameData.answer)) {
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + gameData.answer + "'");
+                String tempBody = "' is wrong answer ;(. Correct answer was '";
+                System.out.println("'" + userAnswer + tempBody + gameData.answer + "'");
                 return;
             }
         }

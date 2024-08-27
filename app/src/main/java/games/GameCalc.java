@@ -1,7 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.games.GameData;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -31,7 +29,8 @@ public class GameCalc {
                     break;
                 default:
                     gameData.answer = String.valueOf(value1 * value2);
-                    break;}
+                    break;
+            }
             gameDataList.add(gameData);
         }
         return gameDataList;

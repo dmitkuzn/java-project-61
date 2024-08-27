@@ -17,4 +17,11 @@ Failed scenario:
 
 ![Fail](/app/assets/EvenGame_fail.png)
 
+## Game 2 - Calc
+Game - calculate in mind the number.
+
+Success scenario:
+
+![Success](/app/assets/CalcGame_success.png)
+
 
