@@ -1,26 +1,27 @@
 package hexlet.code;
 
 import java.util.Scanner;
+import hexlet.code.games.GameEven;
+import hexlet.code.games.GameCalc;
+
 
 public class App {
 
-
-
     public static void main(String[] args) {
-        /*boolean exitCondition = false;
-        while (!exitCondition) {*/
         printMenu();
         Integer userChoice = getUserChoice();
         switch (userChoice) {
             case 0:
-                //exitCondition = true;
                 System.out.println("Good bye!!!");
                 break;
-            case 1: hexlet.code.Cli.userGreeting();
+            case 1:
+                hexlet.code.Cli.userGreeting();
                 break;
             case 2:
-                Game game = new hexlet.code.GameEven();
-                game.startGame();
+                hexlet.code.Engine.startGame(GameEven.getGameGreeting(), GameEven.getGameData());
+                break;
+            case 3:
+                hexlet.code.Engine.startGame(GameCalc.getGameGreeting(), GameCalc.getGameData());
                 break;
             default:
                 break;
@@ -45,6 +46,7 @@ public class App {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
+        System.out.println("3 - Calc");
         System.out.println("0 - Exit");
         System.out.println("===============================");
     }
