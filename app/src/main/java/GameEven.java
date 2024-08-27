@@ -7,7 +7,7 @@ public class GameEven implements Game {
 
     private String userName;
 
-    public void startGame() {
+    public void  startGame() {
         printGreeting();
         Random random = new Random();
         for (int i = 0; i < 3; i++) {

@@ -9,21 +9,22 @@ public class App {
     public static void main(String[] args) {
         /*boolean exitCondition = false;
         while (!exitCondition) {*/
-            printMenu();
-            Integer userChoice = getUserChoice();
-            switch (userChoice) {
-                case 0:
-                    //exitCondition = true;
-                    System.out.println("Good bye!!!");
-                    break;
-                case 1:
-                    hexlet.code.Cli.userGreeting();
-                    break;
-                case 2:
-                    Game game = new hexlet.code.GameEven();
-                    game.startGame();
-                    break;
-            }
+        printMenu();
+        Integer userChoice = getUserChoice();
+        switch (userChoice) {
+            case 0:
+                //exitCondition = true;
+                System.out.println("Good bye!!!");
+                break;
+            case 1: hexlet.code.Cli.userGreeting();
+                break;
+            case 2:
+                Game game = new hexlet.code.GameEven();
+                game.startGame();
+                break;
+            default:
+                break;
+        }
         //}
     }
 
@@ -33,8 +34,7 @@ public class App {
         String userChoice = sc.nextLine();
         try {
             return Integer.parseInt(userChoice);
-        }
-        catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             System.out.println("Incorrect choice - must be a number!!!");
         }
         return null;
