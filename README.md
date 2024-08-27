@@ -24,4 +24,17 @@ Success scenario:
 
 ![Success](/app/assets/CalcGame_success.png)
 
+Failed scenario:
 
+![Fail](/app/assets/CalcGame_fail.png)
+
+## Game 3 - GCD
+Game - find max common divisor.
+
+Success scenario:
+
+![Success](/app/assets/GCDGame_success.png)
+
+Failed scenario:
+
+![Fail](/app/assets/GCDGame_fail.png)
