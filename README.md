@@ -38,3 +38,25 @@ Success scenario:
 Failed scenario:
 
 ![Fail](/app/assets/GCDGame_fail.png)
+
+## Game 4 - Progression
+Game - What number is missing in the progression?.
+
+Success scenario:
+
+![Success](/app/assets/ProgressionGame_success.png)
+
+Failed scenario:
+
+![Fail](/app/assets/ProgressionGame_fail.png)
+
+## Game 5 - Prime
+Game - Is number prime or not.
+
+Success scenario:
+
+![Success](/app/assets/PrimeGame_success.png)
+
+Failed scenario:
+
+![Fail](/app/assets/PrimeGame_fail.png)

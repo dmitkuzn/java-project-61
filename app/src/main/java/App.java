@@ -4,6 +4,8 @@ import java.util.Scanner;
 import hexlet.code.games.GameEven;
 import hexlet.code.games.GameCalc;
 import hexlet.code.games.GameGCD;
+import hexlet.code.games.GameProgression;
+import hexlet.code.games.GamePrime;
 
 
 public class App {
@@ -26,6 +28,12 @@ public class App {
                 break;
             case 4:
                 hexlet.code.Engine.startGame(GameGCD.getGameGreeting(), GameGCD.getGameData());
+                break;
+            case 5:
+                hexlet.code.Engine.startGame(GameProgression.getGameGreeting(), GameProgression.getGameData());
+                break;
+            case 6:
+                hexlet.code.Engine.startGame(GamePrime.getGameGreeting(), GamePrime.getGameData());
                 break;
             default:
                 break;
@@ -52,6 +60,8 @@ public class App {
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         System.out.println("===============================");
     }
