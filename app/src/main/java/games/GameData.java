@@ -12,12 +12,12 @@ public final class GameData {
         return answer;
     }
 
-    public void setAnswer(String new_answer) {
-        this.answer = new_answer;
+    public void setAnswer(String newAnswer) {
+        this.answer = newAnswer;
     }
 
-    public void setQuestion(String new_question) {
-        this.question = new_question;
+    public void setQuestion(String newQuestion) {
+        this.question = newQuestion;
     }
 
     public GameData() {
