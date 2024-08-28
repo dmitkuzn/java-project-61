@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-public class GameData {
+public final class GameData {
     private String question;
     private String answer;
 
