@@ -3,8 +3,11 @@ package hexlet.code.games;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import hexlet.code.Engine;
 
 public class GameGCD {
+
+    private static final int GCD_MAX_VALUE = 100;
 
     public static String getGameGreeting() {
         return "Find the greatest common divisor of given numbers.";
@@ -13,15 +16,15 @@ public class GameGCD {
     public static List<GameData> getGameData() {
         Random random = new Random();
         List<GameData> gameDataList = new ArrayList<GameData>();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Engine.GAME_QUESTIONS_COUNT; i++) {
             var gameData = new GameData();
-            int value1 = random.nextInt(100) + 1;
-            int value2 = random.nextInt(100) + 1;
-            gameData.question = value1 + " " + value2;
+            int value1 = random.nextInt(GCD_MAX_VALUE) + 1;
+            int value2 = random.nextInt(GCD_MAX_VALUE) + 1;
+            gameData.setQuestion(value1 + " " + value2);
             if (value1 > value2) {
-                gameData.answer = String.valueOf(getGCD(value1, value2));
+                gameData.setAnswer(String.valueOf(getGCD(value1, value2)));
             } else {
-                gameData.answer = String.valueOf(getGCD(value2, value1));
+                gameData.setAnswer(String.valueOf(getGCD(value2, value1)));
             }
             gameDataList.add(gameData);
         }

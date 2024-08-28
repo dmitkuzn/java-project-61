@@ -6,21 +6,22 @@ import java.util.Scanner;
 import java.util.List;
 
 
-class Engine {
+public class Engine {
 
+    public static final int GAME_QUESTIONS_COUNT = 3;
     private static String userName;
 
     public static void startGame(String greeting, List<GameData> gameDataList) {
         printGreeting(greeting);
         for (var gameData : gameDataList) {
-            System.out.println("Question: " + gameData.question);
+            System.out.println("Question: " + gameData.getQuestion());
             Scanner sc = new Scanner(System.in);
             String userAnswer = sc.nextLine().toLowerCase();
-            if (userAnswer.equals(gameData.answer)) {
+            if (userAnswer.equals(gameData.getAnswer())) {
                 System.out.println("Correct!");
             } else {
                 String tempBody = "' is wrong answer ;(. Correct answer was '";
-                System.out.println("'" + userAnswer + tempBody + gameData.answer + "'");
+                System.out.println("'" + userAnswer + tempBody + gameData.getAnswer() + "'");
                 System.out.println("Let's try again, " + userName + "!");
                 return;
             }

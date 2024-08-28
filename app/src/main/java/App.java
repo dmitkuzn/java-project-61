@@ -10,29 +10,37 @@ import hexlet.code.games.GamePrime;
 
 public class App {
 
+    static final int MENU_EXIT = 0;
+    static final int MENU_GREETING = 1;
+    static final int MENU_GAMEEEVEN = 2;
+    static final int MENU_GAMECALC = 3;
+    static final int MENU_GAMEGCD = 4;
+    static final int MENU_GAMEPROGRESSION = 5;
+    static final int MENU_GAMEPRIME = 6;
+
     public static void main(String[] args) {
         printMenu();
         Integer userChoice = getUserChoice();
         switch (userChoice) {
-            case 0:
+            case MENU_EXIT:
                 System.out.println("Good bye!!!");
                 break;
-            case 1:
+            case MENU_GREETING:
                 hexlet.code.Cli.userGreeting();
                 break;
-            case 2:
+            case MENU_GAMEEEVEN:
                 hexlet.code.Engine.startGame(GameEven.getGameGreeting(), GameEven.getGameData());
                 break;
-            case 3:
+            case MENU_GAMECALC:
                 hexlet.code.Engine.startGame(GameCalc.getGameGreeting(), GameCalc.getGameData());
                 break;
-            case 4:
+            case MENU_GAMEGCD:
                 hexlet.code.Engine.startGame(GameGCD.getGameGreeting(), GameGCD.getGameData());
                 break;
-            case 5:
+            case MENU_GAMEPROGRESSION:
                 hexlet.code.Engine.startGame(GameProgression.getGameGreeting(), GameProgression.getGameData());
                 break;
-            case 6:
+            case MENU_GAMEPRIME:
                 hexlet.code.Engine.startGame(GamePrime.getGameGreeting(), GamePrime.getGameData());
                 break;
             default:
@@ -56,13 +64,13 @@ public class App {
     public static void printMenu() {
         System.out.println("==============MENU=============");
         System.out.println("Please enter the game number and press Enter.");
-        System.out.println("1 - Greet");
-        System.out.println("2 - Even");
-        System.out.println("3 - Calc");
-        System.out.println("4 - GCD");
-        System.out.println("5 - Progression");
-        System.out.println("6 - Prime");
-        System.out.println("0 - Exit");
+        System.out.println(MENU_GREETING + " - Greet");
+        System.out.println(MENU_GAMEEEVEN + " - Even");
+        System.out.println(MENU_GAMECALC + " - Calc");
+        System.out.println(MENU_GAMEGCD + " - GCD");
+        System.out.println(MENU_GAMEPROGRESSION + " - Progression");
+        System.out.println(MENU_GAMEPRIME + " - Prime");
+        System.out.println(MENU_EXIT + " - Exit");
         System.out.println("===============================");
     }
 
