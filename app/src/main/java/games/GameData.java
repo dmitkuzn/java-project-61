@@ -13,11 +13,11 @@ public final class GameData {
     }
 
     public void setAnswer(String new_answer) {
-        this.answer = answer;
+        this.answer = new_answer;
     }
 
     public void setQuestion(String new_question) {
-        this.question = question;
+        this.question = new_question;
     }
 
     public GameData() {
