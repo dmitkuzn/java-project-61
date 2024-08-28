@@ -28,7 +28,7 @@ public class GamePrime {
 
     public static String isPrime(int num) {
         if (num == 1) {
-            return "yes";
+            return "no";
         }
         for (int i = 2; i <= num / 2; i++) {
             if (num % i == 0) {
