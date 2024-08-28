@@ -21,6 +21,7 @@ class Engine {
             } else {
                 String tempBody = "' is wrong answer ;(. Correct answer was '";
                 System.out.println("'" + userAnswer + tempBody + gameData.answer + "'");
+                System.out.println("Let's try again, " + userName + "!");
                 return;
             }
         }
