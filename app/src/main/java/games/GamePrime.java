@@ -18,21 +18,21 @@ public class GamePrime {
             var gameData = new GameData();
             int number = Utils.getRandomInt(1, MAX_PRIME_NUM);
             gameData.setQuestion(String.valueOf(number));
-            gameData.setAnswer(isPrime(number));
+            gameData.setAnswer(isPrime(number) ? "yes" : "no");
             gameDataList.add(gameData);
         }
         return gameDataList;
     }
 
-    public static String isPrime(int num) {
+    public static boolean isPrime(int num) {
         if (num == 1) {
-            return "no";
+            return false;
         }
         for (int i = 2; i <= num / 2; i++) {
             if (num % i == 0) {
-                return "no";
+                return false;
             }
         }
-        return "yes";
+        return true;
     }
 }
