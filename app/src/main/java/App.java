@@ -17,10 +17,19 @@ public class App {
     static final int MENU_GAMEGCD = 4;
     static final int MENU_GAMEPROGRESSION = 5;
     static final int MENU_GAMEPRIME = 6;
+    static final int MENU_GAME = 100000;
 
     public static void main(String[] args) {
+        //Printing game's menu
         printMenu();
-        Integer userChoice = getUserChoice();
+        System.out.print("Your choice: ");
+        Scanner sc = new Scanner(System.in);
+        Integer userChoice = -1;
+        try {
+            userChoice = Integer.parseInt(sc.nextLine());
+        } catch (NumberFormatException e) {
+            ;
+        }
         switch (userChoice) {
             case MENU_EXIT:
                 System.out.println("Good bye!!!");
@@ -44,21 +53,9 @@ public class App {
                 hexlet.code.Engine.startGame(GamePrime.getGameGreeting(), GamePrime.getGameData());
                 break;
             default:
+                System.out.println("Incorrect choice! Must be a number from 0 to " + MENU_GAMEPRIME + "!!!");
                 break;
         }
-        //}
-    }
-
-    public static Integer getUserChoice() {
-        System.out.print("Your choice: ");
-        Scanner sc = new Scanner(System.in);
-        String userChoice = sc.nextLine();
-        try {
-            return Integer.parseInt(userChoice);
-        } catch (NumberFormatException e) {
-            System.out.println("Incorrect choice - must be a number!!!");
-        }
-        return null;
     }
 
     public static void printMenu() {
