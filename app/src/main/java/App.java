@@ -28,7 +28,8 @@ public class App {
         try {
             userChoice = Integer.parseInt(sc.nextLine());
         } catch (NumberFormatException e) {
-            ;
+            System.out.println("Your choice must be a number!!!");
+            return;
         }
         switch (userChoice) {
             case MENU_EXIT:
@@ -53,7 +54,7 @@ public class App {
                 hexlet.code.Engine.startGame(GamePrime.getGameGreeting(), GamePrime.getGameData());
                 break;
             default:
-                System.out.println("Incorrect choice! Must be a number from 0 to " + MENU_GAMEPRIME + "!!!");
+                System.out.println("Must be a number from 0 to " + MENU_GAMEPRIME + "!!!");
                 break;
         }
     }

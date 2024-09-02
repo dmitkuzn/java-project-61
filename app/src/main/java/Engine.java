@@ -11,8 +11,8 @@ public class Engine {
     public static final int GAME_QUESTIONS_COUNT = 3;
     private static String userName;
 
-    public static void startGame(String greeting, List<GameData> gameDataList) {
-        printGreeting(greeting);
+    public static void startGame(String gameGreeting, List<GameData> gameDataList) {
+        printGreeting(gameGreeting);
         for (var gameData : gameDataList) {
             System.out.println("Question: " + gameData.getQuestion());
             Scanner sc = new Scanner(System.in);

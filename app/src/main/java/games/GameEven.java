@@ -2,7 +2,6 @@ package hexlet.code.games;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import hexlet.code.Engine;
 
 public class GameEven {
@@ -19,7 +18,7 @@ public class GameEven {
             var gameData = new GameData();
             int value = Utils.getRandomInt(1, MAX_EVEN_NUM);
             gameData.setQuestion(String.valueOf(value));
-            if (value % 2 == 0) {
+            if (isEven(value)) {
                 gameData.setAnswer("yes");
             } else {
                 gameData.setAnswer("no");
@@ -27,5 +26,13 @@ public class GameEven {
             gameDataList.add(gameData);
         }
         return gameDataList;
+    }
+
+    public static boolean isEven(int num) {
+        if (num % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
