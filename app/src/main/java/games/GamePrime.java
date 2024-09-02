@@ -14,11 +14,10 @@ public class GamePrime {
     }
 
     public static List<GameData> getGameData() {
-        Random random = new Random();
         List<GameData> gameDataList = new ArrayList<GameData>();
         for (int i = 0; i < Engine.GAME_QUESTIONS_COUNT; i++) {
             var gameData = new GameData();
-            int number = random.nextInt(MAX_PRIME_NUM) + 1;
+            int number = Utils.getRandomInt(1, MAX_PRIME_NUM);
             gameData.setQuestion(String.valueOf(number));
             gameData.setAnswer(isPrime(number));
             gameDataList.add(gameData);

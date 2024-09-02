@@ -14,11 +14,10 @@ public class GameEven {
     }
 
     public static List<GameData> getGameData() {
-        Random random = new Random();
         List<GameData> gameDataList = new ArrayList<GameData>();
         for (int i = 0; i < Engine.GAME_QUESTIONS_COUNT; i++) {
             var gameData = new GameData();
-            int value = random.nextInt(MAX_EVEN_NUM) + 1;
+            int value = Utils.getRandomInt(1, MAX_EVEN_NUM);
             gameData.setQuestion(String.valueOf(value));
             if (value % 2 == 0) {
                 gameData.setAnswer("yes");

@@ -14,12 +14,11 @@ public class GameGCD {
     }
 
     public static List<GameData> getGameData() {
-        Random random = new Random();
         List<GameData> gameDataList = new ArrayList<GameData>();
         for (int i = 0; i < Engine.GAME_QUESTIONS_COUNT; i++) {
             var gameData = new GameData();
-            int value1 = random.nextInt(GCD_MAX_VALUE) + 1;
-            int value2 = random.nextInt(GCD_MAX_VALUE) + 1;
+            int value1 = Utils.getRandomInt(1, GCD_MAX_VALUE);
+            int value2 = Utils.getRandomInt(1, GCD_MAX_VALUE);
             gameData.setQuestion(value1 + " " + value2);
             if (value1 > value2) {
                 gameData.setAnswer(String.valueOf(getGCD(value1, value2)));

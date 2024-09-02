@@ -14,12 +14,11 @@ public class GameCalc {
     }
 
     public static List<GameData> getGameData() {
-        Random random = new Random();
         List<GameData> gameDataList = new ArrayList<GameData>();
         for (int i = 0; i < Engine.GAME_QUESTIONS_COUNT; i++) {
             var gameData = new GameData();
-            int value1 = random.nextInt(CALC_MAX_VALUE) + 1;
-            int value2 = random.nextInt(CALC_MAX_VALUE) + 1;
+            int value1 = Utils.getRandomInt(1, CALC_MAX_VALUE);
+            int value2 = Utils.getRandomInt(1, CALC_MAX_VALUE);
             String sign = getRandomSign();
             gameData.setQuestion(value1 + " " + sign + " " + value2);
 
@@ -41,7 +40,7 @@ public class GameCalc {
 
     public static String getRandomSign() {
         Random random = new Random();
-        int value = random.nextInt(2) + 1;
+        int value = Utils.getRandomInt(0, 2);
         switch (value) {
             case 0:
                 return "+";
