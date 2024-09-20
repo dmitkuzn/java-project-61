@@ -18,27 +18,23 @@ public class GameCalc {
         for (int i = 0; i < Engine.GAME_QUESTIONS_COUNT; i++) {
             String strQuestion = "";
             String strAnswer = "";
-            prepareGameData(strQuestion, strAnswer);
+            int value1 = Utils.getRandomInt(1, CALC_MAX_VALUE);
+            int value2 = Utils.getRandomInt(1, CALC_MAX_VALUE);
+            int sign = Utils.getRandomInt(0, CALC_SIGN_MULT);
+            switch (sign) {
+                case CALC_SIGN_PLUS:
+                    strQuestion = value1 + " + " + value2;
+                    strAnswer = String.valueOf(value1 + value2);
+                case CALC_SIGN_MINUS:
+                    strQuestion = value1 + " - " + value2;
+                    strAnswer = String.valueOf(value1 - value2);
+                default:
+                    //CALC_SIGN_MULT
+                    strQuestion = value1 + " * " + value2;
+                    strAnswer = String.valueOf(value1 * value2);
+            }
             gameQuestions.add(strQuestion);
-            gameQuestions.add(strAnswer);
-        }
-    }
-
-    public static void prepareGameData(String strQuestion, String strAnswer) {
-        int value1 = Utils.getRandomInt(1, CALC_MAX_VALUE);
-        int value2 = Utils.getRandomInt(1, CALC_MAX_VALUE);
-        int sign = Utils.getRandomInt(0, CALC_SIGN_MULT);
-        switch (sign) {
-            case CALC_SIGN_PLUS:
-                strQuestion = value1 + " + " + value2;
-                strAnswer = String.valueOf(value1 + value2);
-            case CALC_SIGN_MINUS:
-                strQuestion = value1 + " - " + value2;
-                strAnswer = String.valueOf(value1 - value2);
-            default:
-                //CALC_SIGN_MULT
-                strQuestion = value1 + " * " + value2;
-                strAnswer = String.valueOf(value1 * value2);
+            gameAnswers.add(strAnswer);
         }
     }
 }
