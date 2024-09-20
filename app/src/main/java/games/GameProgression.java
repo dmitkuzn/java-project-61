@@ -22,29 +22,21 @@ public class GameProgression {
             int progressionStep = Utils.getRandomInt(1, MAX_PROGRESSION_STEP);
             int progressionStart = Utils.getRandomInt(1, PROGRESSION_FIRST_NUM);
             int progressionCount = Utils.getRandomInt(PROGRESSION_MIN_SIZE, PROGRESSION_MAX_SIZE);
-            List<Integer> progression = getProgression(progressionStart, progressionStep, progressionCount);
+            List<String> progression = getProgression(progressionStart, progressionStep, progressionCount);
             //System.out.println(progression);
             int progressionNumHided = Utils.getRandomInt(0, progression.size() - 1);
-            strAnswer = String.valueOf(progression.get(progressionNumHided));
-            for (int j = 0; j < progression.size(); j++) {
-                if (j != 0) {
-                    strQuestion = strQuestion + " ";
-                }
-                if (j != progressionNumHided) {
-                    strQuestion  = strQuestion + String.valueOf(progression.get(j));
-                } else {
-                    strQuestion = strQuestion + "..";
-                }
-            }
+            strAnswer = progression.get(progressionNumHided);
+            progression.set(progressionNumHided, "..");
+            strQuestion = String.join(" ", progression);
             gameQuestions.add(strQuestion);
             gameAnswers.add(strAnswer);
         }
     }
 
-    public static List<Integer> getProgression(int start, int step, int count) {
-        var progression = new ArrayList<Integer>();
+    public static List<String> getProgression(int start, int step, int count) {
+        var progression = new ArrayList<String>();
         for (int i = 0; i < count; i++) {
-            progression.add(start + i * step);
+            progression.add(String.valueOf(start + i * step));
         }
         return progression;
     }
