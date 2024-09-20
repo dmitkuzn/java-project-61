@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import java.util.ArrayList;
 import java.util.List;
 import hexlet.code.Engine;
 
@@ -12,16 +11,16 @@ public class GamePrime {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 
-    public static List<GameData> getGameData() {
-        List<GameData> gameDataList = new ArrayList<GameData>();
+    public static void getGameData(List<String> gameQuestions, List<String> gameAnswers) {
         for (int i = 0; i < Engine.GAME_QUESTIONS_COUNT; i++) {
-            var gameData = new GameData();
+            String strQuestion = "";
+            String strAnswer = "";
             int number = Utils.getRandomInt(1, MAX_PRIME_NUM);
-            gameData.setQuestion(String.valueOf(number));
-            gameData.setAnswer(isPrime(number) ? "yes" : "no");
-            gameDataList.add(gameData);
+            strQuestion = String.valueOf(number);
+            strAnswer = isPrime(number) ? "yes" : "no";
+            gameQuestions.add(strQuestion);
+            gameAnswers.add(strAnswer);
         }
-        return gameDataList;
     }
 
     public static boolean isPrime(int num) {

@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import java.util.ArrayList;
 import java.util.List;
 import hexlet.code.Engine;
 
@@ -15,32 +14,31 @@ public class GameCalc {
         return "What is the result of the expression?";
     }
 
-    public static List<GameData> getGameData() {
-        List<GameData> gameDataList = new ArrayList<GameData>();
+    public static void getGameData(List<String> gameQuestions, List<String> gameAnswers) {
         for (int i = 0; i < Engine.GAME_QUESTIONS_COUNT; i++) {
-            int value1 = Utils.getRandomInt(1, CALC_MAX_VALUE);
-            int value2 = Utils.getRandomInt(1, CALC_MAX_VALUE);
-            int sign = Utils.getRandomInt(0, CALC_SIGN_MULT);
-            var gameData = prepareGameData(value1, value2, sign);
-            gameDataList.add(gameData);
+            String strQuestion = "";
+            String strAnswer = "";
+            prepareGameData(strQuestion, strAnswer);
+            gameQuestions.add(strQuestion);
+            gameQuestions.add(strAnswer);
         }
-        return gameDataList;
     }
 
-    public static GameData prepareGameData(int value1, int value2, int sign) {
-        GameData gameData = new hexlet.code.games.GameData();
+    public static void prepareGameData(String strQuestion, String strAnswer) {
+        int value1 = Utils.getRandomInt(1, CALC_MAX_VALUE);
+        int value2 = Utils.getRandomInt(1, CALC_MAX_VALUE);
+        int sign = Utils.getRandomInt(0, CALC_SIGN_MULT);
         switch (sign) {
             case CALC_SIGN_PLUS:
-                gameData.setQuestion(value1 + " + " + value2);
-                gameData.setAnswer(String.valueOf(value1 + value2));
+                strQuestion = value1 + " + " + value2;
+                strAnswer = String.valueOf(value1 + value2);
             case CALC_SIGN_MINUS:
-                gameData.setQuestion(value1 + " - " + value2);
-                gameData.setAnswer(String.valueOf(value1 - value2));
+                strQuestion = value1 + " - " + value2;
+                strAnswer = String.valueOf(value1 - value2);
             default:
                 //CALC_SIGN_MULT
-                gameData.setQuestion(value1 + " * " + value2);
-                gameData.setAnswer(String.valueOf(value1 * value2));
+                strQuestion = value1 + " * " + value2;
+                strAnswer = String.valueOf(value1 * value2);
         }
-        return gameData;
     }
 }
