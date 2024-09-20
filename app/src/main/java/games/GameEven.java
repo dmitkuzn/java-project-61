@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import java.util.List;
 import hexlet.code.Engine;
 
 public class GameEven {
@@ -11,19 +10,16 @@ public class GameEven {
         return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 
-    public static void getGameData(List<String> gameQuestions, List<String> gameAnswers) {
+    public static void getGameData(String[][] arrGameData) {
         for (int i = 0; i < Engine.GAME_QUESTIONS_COUNT; i++) {
             String strQuestion = "";
             String strAnswer = "";
             int value = Utils.getRandomInt(1, MAX_EVEN_NUM);
             strQuestion = String.valueOf(value);
-            strAnswer = isEven(value) ? "yes" : "no";
-            gameQuestions.add(strQuestion);
-            gameAnswers.add(strAnswer);
+            strAnswer = (value % 2 == 0) ? "yes" : "no";
+            arrGameData[i][0] = strQuestion;
+            arrGameData[i][1] = strAnswer;
         }
     }
 
-    public static boolean isEven(int num) {
-        return (num % 2 == 0);
-    }
 }

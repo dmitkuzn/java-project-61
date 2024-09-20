@@ -1,6 +1,5 @@
 package hexlet.code;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 import hexlet.code.games.GameEven;
 import hexlet.code.games.GameCalc;
@@ -20,7 +19,7 @@ public class App {
     static final int MENU_GAMEPRIME = 6;
     static final int MENU_GAME = 100000;
 
-    public static <List> void main(String[] args) {
+    public static void main(String[] args) {
         //Printing game's menu
         printMenu();
         System.out.print("Your choice: ");
@@ -32,8 +31,7 @@ public class App {
             System.out.println("Your choice must be a number!!!");
             return;
         }
-        var gameQuestions = new ArrayList<String>();
-        var gameAnswers = new ArrayList<String>();
+        String[][] arrGameData = new String[hexlet.code.Engine.GAME_QUESTIONS_COUNT][2];
         switch (userChoice) {
             case MENU_EXIT:
                 System.out.println("Good bye!!!");
@@ -42,24 +40,24 @@ public class App {
                 hexlet.code.Cli.userGreeting();
                 break;
             case MENU_GAMEEEVEN:
-                GameEven.getGameData(gameQuestions, gameAnswers);
-                hexlet.code.Engine.startGame(GameEven.getGameGreeting(), gameQuestions, gameAnswers);
+                GameEven.getGameData(arrGameData);
+                hexlet.code.Engine.startGame(GameEven.getGameGreeting(), arrGameData);
                 break;
             case MENU_GAMECALC:
-                GameCalc.getGameData(gameQuestions, gameAnswers);
-                hexlet.code.Engine.startGame(GameCalc.getGameGreeting(), gameQuestions, gameAnswers);
+                GameCalc.getGameData(arrGameData);
+                hexlet.code.Engine.startGame(GameCalc.getGameGreeting(), arrGameData);
                 break;
             case MENU_GAMEGCD:
-                GameGCD.getGameData(gameQuestions, gameAnswers);
-                hexlet.code.Engine.startGame(GameGCD.getGameGreeting(), gameQuestions, gameAnswers);
+                GameGCD.getGameData(arrGameData);
+                hexlet.code.Engine.startGame(GameGCD.getGameGreeting(), arrGameData);
                 break;
             case MENU_GAMEPROGRESSION:
-                GameProgression.getGameData(gameQuestions, gameAnswers);
-                hexlet.code.Engine.startGame(GameProgression.getGameGreeting(), gameQuestions, gameAnswers);
+                GameProgression.getGameData(arrGameData);
+                hexlet.code.Engine.startGame(GameProgression.getGameGreeting(), arrGameData);
                 break;
             case MENU_GAMEPRIME:
-                GamePrime.getGameData(gameQuestions, gameAnswers);
-                hexlet.code.Engine.startGame(GamePrime.getGameGreeting(), gameQuestions, gameAnswers);
+                GamePrime.getGameData(arrGameData);
+                hexlet.code.Engine.startGame(GamePrime.getGameGreeting(), arrGameData);
                 break;
             default:
                 System.out.println("Must be a number from 0 to " + MENU_GAMEPRIME + "!!!");

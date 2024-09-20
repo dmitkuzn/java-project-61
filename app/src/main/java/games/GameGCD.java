@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import java.util.List;
 import hexlet.code.Engine;
 
 public class GameGCD {
@@ -11,7 +10,7 @@ public class GameGCD {
         return "Find the greatest common divisor of given numbers.";
     }
 
-    public static void getGameData(List<String> gameQuestions, List<String> gameAnswers) {
+    public static void getGameData(String[][] arrGameData) {
         for (int i = 0; i < Engine.GAME_QUESTIONS_COUNT; i++) {
             String strQuestion = "";
             String strAnswer = "";
@@ -23,8 +22,8 @@ public class GameGCD {
             } else {
                 strAnswer = String.valueOf(getGCD(value2, value1));
             }
-            gameQuestions.add(strQuestion);
-            gameAnswers.add(strAnswer);
+            arrGameData[i][0] = strQuestion;
+            arrGameData[i][1] = strAnswer;
         }
     }
 

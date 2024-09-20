@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import java.util.List;
 import hexlet.code.Engine;
 
 public class GameCalc {
@@ -14,7 +13,7 @@ public class GameCalc {
         return "What is the result of the expression?";
     }
 
-    public static void getGameData(List<String> gameQuestions, List<String> gameAnswers) {
+    public static void getGameData(String[][] arrGameData) {
         for (int i = 0; i < Engine.GAME_QUESTIONS_COUNT; i++) {
             String strQuestion = "";
             String strAnswer = "";
@@ -25,16 +24,17 @@ public class GameCalc {
                 case CALC_SIGN_PLUS:
                     strQuestion = value1 + " + " + value2;
                     strAnswer = String.valueOf(value1 + value2);
+                    break;
                 case CALC_SIGN_MINUS:
                     strQuestion = value1 + " - " + value2;
                     strAnswer = String.valueOf(value1 - value2);
+                    break;
                 default:
-                    //CALC_SIGN_MULT
                     strQuestion = value1 + " * " + value2;
                     strAnswer = String.valueOf(value1 * value2);
             }
-            gameQuestions.add(strQuestion);
-            gameAnswers.add(strAnswer);
+            arrGameData[i][0] = strQuestion;
+            arrGameData[i][1] = strAnswer;
         }
     }
 }
