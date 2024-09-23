@@ -6,13 +6,10 @@ import hexlet.code.Utils;
 public class GameEven {
 
     private static final int MAX_EVEN_NUM = 100;
+    private static final String EVEN_GAME_GREETING = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void startGame() {
-        hexlet.code.Engine.startGame(GameEven.getGameGreeting(), GameEven.getGameData());
-    }
-
-    public static String getGameGreeting() {
-        return "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        hexlet.code.Engine.startGame(EVEN_GAME_GREETING, getGameData());
     }
 
     public static String[][] getGameData() {

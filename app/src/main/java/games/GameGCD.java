@@ -7,11 +7,14 @@ public class GameGCD {
 
     private static final int GCD_MAX_VALUE = 100;
 
-    public static String getGameGreeting() {
-        return "Find the greatest common divisor of given numbers.";
+    private static final String GCD_GAME_GREETING = "Find the greatest common divisor of given numbers.";
+
+    public static void startGame() {
+        hexlet.code.Engine.startGame(GCD_GAME_GREETING, getGameData());
     }
 
-    public static void getGameData(String[][] arrGameData) {
+    public static String[][] getGameData() {
+        String[][] arrGameData = new String[hexlet.code.Engine.GAME_QUESTIONS_COUNT][2];
         for (int i = 0; i < Engine.GAME_QUESTIONS_COUNT; i++) {
             String strQuestion = "";
             String strAnswer = "";
@@ -26,6 +29,7 @@ public class GameGCD {
             arrGameData[i][0] = strQuestion;
             arrGameData[i][1] = strAnswer;
         }
+        return arrGameData;
     }
 
     public static int getGCD(int maxValue, int minValue) {

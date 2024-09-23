@@ -10,11 +10,14 @@ public class GameCalc {
     private static final int CALC_SIGN_MINUS = 1;
     private static final int CALC_SIGN_MULT = 2;
 
-    public static String getGameGreeting() {
-        return "What is the result of the expression?";
+    private static final String CALC_GAME_GREETING = "What is the result of the expression?";
+
+    public static void startGame() {
+        hexlet.code.Engine.startGame(CALC_GAME_GREETING, getGameData());
     }
 
-    public static void getGameData(String[][] arrGameData) {
+    public static String[][] getGameData() {
+        String[][] arrGameData = new String[hexlet.code.Engine.GAME_QUESTIONS_COUNT][2];
         for (int i = 0; i < Engine.GAME_QUESTIONS_COUNT; i++) {
             String strQuestion = "";
             String strAnswer = "";
@@ -24,6 +27,7 @@ public class GameCalc {
             arrGameData[i][0] = getCalcQuestion(value1, value2, sign);
             arrGameData[i][1] = String.valueOf(getCalcResult(value1, value2, sign));
         }
+        return arrGameData;
     }
 
     public static int getCalcResult(int value1, int value2, int sign) {

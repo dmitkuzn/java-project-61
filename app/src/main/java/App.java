@@ -31,7 +31,6 @@ public class App {
             System.out.println("Your choice must be a number!!!");
             return;
         }
-        String[][] arrGameData = new String[hexlet.code.Engine.GAME_QUESTIONS_COUNT][2];
         switch (userChoice) {
             case MENU_EXIT:
                 System.out.println("Good bye!!!");
@@ -43,20 +42,16 @@ public class App {
                 GameEven.startGame();
                 break;
             case MENU_GAMECALC:
-                GameCalc.getGameData(arrGameData);
-                hexlet.code.Engine.startGame(GameCalc.getGameGreeting(), arrGameData);
+                GameCalc.startGame();
                 break;
             case MENU_GAMEGCD:
-                GameGCD.getGameData(arrGameData);
-                hexlet.code.Engine.startGame(GameGCD.getGameGreeting(), arrGameData);
+                GameGCD.startGame();
                 break;
             case MENU_GAMEPROGRESSION:
-                GameProgression.getGameData(arrGameData);
-                hexlet.code.Engine.startGame(GameProgression.getGameGreeting(), arrGameData);
+                GameProgression.startGame();
                 break;
             case MENU_GAMEPRIME:
-                GamePrime.getGameData(arrGameData);
-                hexlet.code.Engine.startGame(GamePrime.getGameGreeting(), arrGameData);
+                GamePrime.startGame();
                 break;
             default:
                 System.out.println("Must be a number from 0 to " + MENU_GAMEPRIME + "!!!");

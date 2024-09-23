@@ -10,11 +10,14 @@ public class GameProgression {
     private static final int PROGRESSION_MIN_SIZE = 5;
     private static final int PROGRESSION_MAX_SIZE = 10;
 
-    public static String getGameGreeting() {
-        return "What number is missing in the progression?";
+    private static final String PRORGESSION_GAME_GREETING = "What number is missing in the progression?";
+
+    public static void startGame() {
+        hexlet.code.Engine.startGame(PRORGESSION_GAME_GREETING, getGameData());
     }
 
-    public static void getGameData(String[][] arrGameData) {
+    public static String[][] getGameData() {
+        String[][] arrGameData = new String[hexlet.code.Engine.GAME_QUESTIONS_COUNT][2];
         for (int i = 0; i < Engine.GAME_QUESTIONS_COUNT; i++) {
             String strQuestion = "";
             String strAnswer = "";
@@ -29,6 +32,7 @@ public class GameProgression {
             arrGameData[i][0] = strQuestion;
             arrGameData[i][1] = strAnswer;
         }
+        return arrGameData;
     }
 
     public static String[] getProgression(int start, int step, int count) {
