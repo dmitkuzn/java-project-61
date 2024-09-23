@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class GameCalc {
 
@@ -20,21 +21,30 @@ public class GameCalc {
             int value1 = Utils.getRandomInt(1, CALC_MAX_VALUE);
             int value2 = Utils.getRandomInt(1, CALC_MAX_VALUE);
             int sign = Utils.getRandomInt(0, CALC_SIGN_MULT);
-            switch (sign) {
-                case CALC_SIGN_PLUS:
-                    strQuestion = value1 + " + " + value2;
-                    strAnswer = String.valueOf(value1 + value2);
-                    break;
-                case CALC_SIGN_MINUS:
-                    strQuestion = value1 + " - " + value2;
-                    strAnswer = String.valueOf(value1 - value2);
-                    break;
-                default:
-                    strQuestion = value1 + " * " + value2;
-                    strAnswer = String.valueOf(value1 * value2);
-            }
-            arrGameData[i][0] = strQuestion;
-            arrGameData[i][1] = strAnswer;
+            arrGameData[i][0] = getCalcQuestion(value1, value2, sign);
+            arrGameData[i][1] = String.valueOf(getCalcResult(value1, value2, sign));
+        }
+    }
+
+    public static int getCalcResult(int value1, int value2, int sign) {
+        switch (sign) {
+            case CALC_SIGN_PLUS:
+                return value1 + value2;
+            case CALC_SIGN_MINUS:
+                return value1 - value2;
+            default:
+                return value1 * value2;
+        }
+    }
+
+    public static String getCalcQuestion(int value1, int value2, int sign) {
+        switch (sign) {
+            case CALC_SIGN_PLUS:
+                return value1 + " + " + value2;
+            case CALC_SIGN_MINUS:
+                return value1 + " - " + value2;
+            default:
+                return value1 + " * " + value2;
         }
     }
 }

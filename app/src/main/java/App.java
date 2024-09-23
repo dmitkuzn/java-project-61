@@ -40,8 +40,7 @@ public class App {
                 hexlet.code.Cli.userGreeting();
                 break;
             case MENU_GAMEEEVEN:
-                GameEven.getGameData(arrGameData);
-                hexlet.code.Engine.startGame(GameEven.getGameGreeting(), arrGameData);
+                GameEven.startGame();
                 break;
             case MENU_GAMECALC:
                 GameCalc.getGameData(arrGameData);
